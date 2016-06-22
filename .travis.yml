@@ -3,6 +3,7 @@ rvm:
 - 2.0
 - 2.1
 - 2.2
+- 2.3
 - jruby
 env:
   global:
@@ -15,6 +16,8 @@ env:
   - POSTGRES_DATABASE=redmine
   - POSTGRES_USER=postgres
   matrix:
+  - REDMINE_VERSION=3.2.3 DATABASE_ADAPTER=mysql
+  - REDMINE_VERSION=3.2.3 DATABASE_ADAPTER=postgresql
   - REDMINE_VERSION=3.1.3 DATABASE_ADAPTER=mysql
   - REDMINE_VERSION=3.1.3 DATABASE_ADAPTER=postgresql
   - REDMINE_VERSION=3.0.7 DATABASE_ADAPTER=mysql
