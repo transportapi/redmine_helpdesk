@@ -39,6 +39,10 @@ module RedmineHelpdesk
             carbon_copy = nil
           end
 
+          if issue.closed?
+	    issue.status = IssueStatus.default
+	  end
+
           email_details << "Date: " + @email[:date].to_s + "\n"
           email_details = "<pre>\n" + Mail::Encodings.unquote_and_convert_to(email_details, 'utf-8') + "</pre>"
           issue.description = email_details + issue.description
